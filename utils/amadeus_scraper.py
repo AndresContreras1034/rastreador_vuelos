@@ -2,8 +2,8 @@ import requests
 from datetime import datetime
 
 # Credenciales de prueba
-CLIENT_ID = "SywvY2ejRhOicBwF7WoxkDbEnpzKFigG"
-CLIENT_SECRET = "s3OFmBMmXA8LIpkx"
+CLIENT_ID = "clienid"
+CLIENT_SECRET = "CLIENTSECRET"
 BASE_URL = "https://test.api.amadeus.com"
 
 

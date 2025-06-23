@@ -5,7 +5,7 @@ fecha_ida = ["2025-07-28", "2025-07-29", "2025-07-30", "2025-07-31"]
 fecha_regreso = "2025-08-01"
 
 # Correos de destinatarios
-correos = ["contrerandres001@gmail.com"]
+correos = ["CORREODESTINATARIO."]
 
 # Umbrales de alerta
 umbral_normal = 600

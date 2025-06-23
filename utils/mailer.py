@@ -5,8 +5,8 @@ from email.mime.multipart import MIMEMultipart
 from config import correos
 
 # Cambia por tu cuenta Gmail y contraseña de aplicación
-email_remitente = "contrerandres001@gmail.com"
-password = "wxul rqfn rxry amjv"
+email_remitente = "correomeitente"
+password = key"
 
 def enviar_correo(asunto, mensaje):
     msg = MIMEMultipart()
