@@ -6,7 +6,7 @@ from config import correos
 
 # Cambia por tu cuenta Gmail y contraseña de aplicación
 email_remitente = "correomeitente"
-password = key"
+password = "key"
 
 def enviar_correo(asunto, mensaje):
     msg = MIMEMultipart()
