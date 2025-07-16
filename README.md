@@ -120,11 +120,13 @@ Top 3 **solo REGRESO**:
 
 ---
 
+
 ## 🔐 Seguridad
 
-- ❌ **No subas** tus claves API ni contraseñas a GitHub.
-- ✅ Usa un archivo `.env` y la librería `python-dotenv` si vas a compartir el proyecto públicamente.
-- ✅ Añade un `.gitignore` si usas Git:
+- ⚠️ Este proyecto usa archivos `.py` como `config.py`, `mailer.py` y `amadeus_scraper.py` para almacenar credenciales y configuraciones.
+- ❌ **No subas** tus claves API ni contraseñas a GitHub si haces público tu repositorio.
+- ✅ Para una mayor seguridad, considera migrar a un archivo `.env` y usar la librería `python-dotenv`.
+- ✅ Si usas Git, añade un `.gitignore` para evitar subir archivos sensibles:
 
 ```gitignore
 .env
