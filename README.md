@@ -106,6 +106,8 @@ __pycache__/
 requests
 -dotenv
 
+```mermaid
+graph TD
 graph TD
 
 Start([Start: Ejecutar alerta de vuelos])
@@ -134,3 +136,4 @@ subgraph Automatización
 end
 
 CorreoUsuario --> End([Correo recibido con vuelos])
+```
