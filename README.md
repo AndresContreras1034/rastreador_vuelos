@@ -1,4 +1,3 @@
-
 # ✈️ Amadeus Flight Alert Bot
 
 Este proyecto automatiza la búsqueda de vuelos entre dos ciudades usando la API de Amadeus, analiza las combinaciones más económicas y envía por correo electrónico las mejores ofertas cada 12 horas. Ideal para encontrar vuelos baratos entre fechas específicas.
@@ -19,92 +18,126 @@ Este proyecto automatiza la búsqueda de vuelos entre dos ciudades usando la API
 ---
 
 ## 📁 Estructura del proyecto
-
+---
+```
 amadeus-alert/
 │
 ├── main.py # Script principal que ejecuta todo
 ├── config.py # Fechas, umbrales y correos
 ├── utils/
-│ ├── amadeus_scraper.py # Lógica de scraping de vuelos vía Amadeus
-│ └── mailer.py # Envío de correos por SMTP
+│   ├── amadeus_scraper.py # Lógica de scraping de vuelos vía Amadeus
+│   └── mailer.py # Envío de correos por SMTP
 ├── .env # (Opcional) Claves privadas si decides usar dotenv
 ├── requirements.txt # Dependencias del proyecto
 └── README.md # Este archivo
+```
+---
+
+## ⚙️ Configuración Inicial
+
+### 1. Clona el repositorio
+```bash
+git clone https://github.com/tuusuario/amadeus-alert.git
+cd amadeus-alert
+```
+
+### 2. (Opcional) Crea un entorno virtual
+```bash
+# En Linux/macOS
+python3 -m venv venv
+source venv/bin/activate
+
+# En Windows
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Instala las dependencias
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configura `config.py` con tus valores
+```python
+ORIGEN = "BOG"
+DESTINO = "YUL"
+FECHAS_IDA = ["2025-07-28", "2025-07-29"]
+FECHAS_REGRESO = ["2025-08-01", "2025-08-02"]
+UMBRAL_NORMAL = 600
+UMBRAL_BRUTAL = 350
+DESTINATARIOS = ["tunombre@correo.com"]
+```
+
+### 5. Añade tus credenciales de correo en `utils/mailer.py`
+```python
+email_remitente = "tucorreo@gmail.com"
+password = "tu_clave_de_aplicación"
+```
+
+### 6. Añade tus credenciales Amadeus en `utils/amadeus_scraper.py`
+```python
+CLIENT_ID = "TU_CLIENT_ID"
+CLIENT_SECRET = "TU_CLIENT_SECRET"
+```
 
 ---
 
-## ⚙️ Configuración inicial
+## 🧪 Ejecución Manual
+```bash
+python main.py
+```
 
-1. **Clona el repositorio o sube los archivos a tu servidor**
-   git clone https://github.com/tuusuario/amadeus-alert.git
-   cd amadeus-alert
+## 🕐 Automatización (ejemplo con PythonAnywhere)
+```bash
+/home/tu_usuario/.virtualenvs/venv/bin/python3.10 /home/tu_usuario/amadeus-alert/main.py
+```
+> Elige el intervalo de repetición (cada 12h, por ejemplo).
 
-2. Crea un entorno virtual (opcional pero recomendado)
-    -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   venv\Scripts\activate     # Windows
+---
 
-3. Instala dependencias
-   pip install -r requirements.txt
+## 📬 Ejemplo de Correo
 
-4. Llena los valores en config.py
-   ORIGEN = "BOG"
-   DESTINO = "YUL"
-   FECHAS_IDA = ["2025-07-28", "2025-07-29"]
-   FECHAS_REGRESO = ["2025-08-01", "2025-08-02"]
-   UMBRAL_NORMAL = 600
-   UMBRAL_BRUTAL = 350
-   DESTINATARIOS = ["tunombre@correo.com"]
-
-5. Llena tus credenciales en utils/mailer.py
-   email_remitente = "tucorreo@gmail.com"
-   password = "clave_de_aplicacion"
-
-6. Llena tus credenciales Amadeus en utils/amadeus_scraper.py
-   CLIENT_ID = "TU_CLIENT_ID"
-   CLIENT_SECRET = "TU_CLIENT_SECRET"
-
-🧪 Ejecución manual
-    main.py
-
-🕐 Automatización (con PythonAnywhere u otro)
-   /home/tu_usuario/.virtualenvs/venv/bin/python3.10 /home/tu_usuario/amadeus-alert/main.py
-
-Elige el intervalo de repetición (cada 12h, por ejemplo).
-
-📬 Ejemplo de correo
-
-🛫 Vuelos BOG ⇄ YUL actualizados
+### 🛫 Vuelos BOG ⇄ YUL actualizados
 
 Top 3 combinaciones completas BOG ⇄ YUL (2025-07-28 - 2025-08-02):
 
-💼 Total: $392.75 USD
-   🛫 Ida: Avianca AV92 (2025-07-28 04:15 → 2025-07-28 10:40, 6h25m, 0 escalas)
-       Link: https://www.skyscanner.com/...
-   🛬 Regreso: Air Canada AC187 (2025-08-02 13:00 → 2025-08-02 19:30, 6h30m, 1 escala)
-       Link: https://www.skyscanner.com/...
+💼 **Total:** $392.75 USD  
+🛫 **Ida:** Avianca AV92  
+🕓 2025-07-28 04:15 → 2025-07-28 10:40 (6h25m, 0 escalas)  
+🔗 [Ver en Skyscanner](https://www.skyscanner.com/...)
+
+🛬 **Regreso:** Air Canada AC187  
+🕓 2025-08-02 13:00 → 2025-08-02 19:30 (6h30m, 1 escala)  
+🔗 [Ver en Skyscanner](https://www.skyscanner.com/...)
 
 ...
 
-Top 3 solo IDA:
+Top 3 **solo IDA**:  
 ...
 
-Top 3 solo REGRESO:
+Top 3 **solo REGRESO**:  
 ...
 
-🔐 Seguridad
-No subas tus claves API ni contraseñas a GitHub.
+---
 
-Usa .env y librerías como -dotenv si vas a compartir el proyecto públicamente.
+## 🔐 Seguridad
 
-Añade un .gitignore si usas Git:
+- ❌ **No subas** tus claves API ni contraseñas a GitHub.
+- ✅ Usa un archivo `.env` y la librería `python-dotenv` si vas a compartir el proyecto públicamente.
+- ✅ Añade un `.gitignore` si usas Git:
+
+```gitignore
 .env
 __pycache__/
 *.pyc
+```
 
-📌 Dependencias
-requests
--dotenv
+---
+
+## 📌 Dependencias
+- `requests`  
+- `python-dotenv` (opcional pero recomendado)
+
 
 ```mermaid
 graph TD
