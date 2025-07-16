@@ -145,6 +145,8 @@ __pycache__/
 - `requests`  
 - `python-dotenv` (opcional pero recomendado)
 
+## Arquitectura del Proyecto: Rastreador de Vuelos
+
 
 ```mermaid
 graph TD
