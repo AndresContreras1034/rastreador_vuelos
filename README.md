@@ -31,6 +31,11 @@ amadeus-alert/
 ├── requirements.txt # Dependencias del proyecto
 └── README.md # Este archivo
 ```
+## 🔑 Credenciales necesarias:
+
+- **API de Amadeus**: Regístrate gratis en https://developers.amadeus.com, crea una aplicación y copia tu `CLIENT_ID` y `CLIENT_SECRET`.
+- **Correo de envío**: Usa un correo Gmail con autenticación de dos pasos y genera una contraseña de aplicación desde tu cuenta.
+
 ---
 
 ## ⚙️ Configuración Inicial
